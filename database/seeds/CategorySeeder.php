@@ -12,7 +12,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $categories = ['Mac', 'iPhone', 'iPad', 'Apple Watch', 'AirPods', 'iPod touch', 'Apple TV'];
+        $categories = ['Mac', 'iPad', 'iPhone', 'Apple Watch', 'AirPods', 'iPod touch', 'Apple TV'];
 
         foreach ($categories as $category) {
             Category::create(['name' => $category]);

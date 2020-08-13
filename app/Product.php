@@ -7,7 +7,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 
-class Category extends Model implements Sortable
+class Product extends Model implements Sortable
 {
     use Sluggable, SortableTrait;
 
@@ -25,7 +25,7 @@ class Category extends Model implements Sortable
         ];
     }
 
-    public function products() {
-        return $this->hasMany(Product::class);
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 }
