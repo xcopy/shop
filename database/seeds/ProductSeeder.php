@@ -95,7 +95,7 @@ class ProductSeeder extends Seeder
             foreach ($products as $product) {
                 $attrs = [
                     'category_id' => $i + 1,
-                    'description' => $faker->sentences(4, true)
+                    'description' => $faker->sentences(10, true)
                 ] + $product;
 
                 Product::create($attrs);

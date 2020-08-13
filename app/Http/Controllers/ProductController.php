@@ -9,8 +9,7 @@ class ProductController extends Controller
 {
     public function index() {
         return view('product.index', [
-            'products' => Product::with('category')->get(),
-            'colors' => ['royalblue', 'limegreen', 'salmon', 'orange', 'purple', 'darkslategray']
+            'products' => Product::with('category')->get()
         ]);
     }
 

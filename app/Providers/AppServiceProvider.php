@@ -29,5 +29,10 @@ class AppServiceProvider extends ServiceProvider
             /** @var $view View */
             $view->with('categories', Category::all());
         });
+
+        view()->composer(['product.index', 'product.show'], function ($view) {
+            /** @var $view View */
+            $view->with('colors', ['royalblue', 'limegreen', 'salmon', 'orange', 'purple', 'darkslategray']);
+        });
     }
 }
