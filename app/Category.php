@@ -4,12 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 
 class Category extends Model implements Sortable
 {
-    use Sluggable, SortableTrait;
+    use Sluggable, SluggableScopeHelpers,
+        SortableTrait;
 
     public $sortable = [
         'order_column_name' => 'sort_order',
@@ -27,5 +29,9 @@ class Category extends Model implements Sortable
 
     public function products() {
         return $this->hasMany(Product::class);
+    }
+
+    public function getRouteKeyName() {
+        return 'slug';
     }
 }

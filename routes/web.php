@@ -13,4 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ProductController@index');
+Route::get('/', 'ProductController@index')
+    ->name('home');
+
+Route::get('{category}', function ($category) {
+    var_dump($category); // todo
+})
+    ->where('category', '[a-z-]+')
+    ->name('category');
+
+Route::get('{category}/{product}', 'ProductController@show')
+    ->where(['category' => '[a-z-]+', 'product' => '[a-z0-9-]+'])
+    ->name('product');

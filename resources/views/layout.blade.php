@@ -29,10 +29,8 @@
             </div>
         </nav>
 
-        <main class="my-3 flex-fill">
-            <div class="container">
-                @yield('content')
-            </div>
+        <main class="flex-fill">
+            @yield('content')
         </main>
 
         <footer class="text-center text-muted p-2">Copyright &copy; {{ date('Y') }} Apple Inc. All rights reserved.</footer>
