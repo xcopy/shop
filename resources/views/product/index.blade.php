@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="container-fluid1">
+    @if (count($products) > 1)
         <div class="row no-gutters">
             @foreach($products as $product)
                 <div class="col-md-3 col-sm-4">
@@ -18,5 +18,7 @@
                 </div>
             @endforeach
         </div>
-    </div>
+    @else
+        <div class="text-center m-5">No results to display.</div>
+    @endif
 @endsection

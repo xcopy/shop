@@ -21,7 +21,12 @@
                     <ul class="navbar-nav justify-content-around w-100">
                         @foreach($categories as $category)
                             <li class="nav-item">
-                                <a href="#" class="nav-link" title="{{ $category->name }}">{{ $category->name }}</a>
+                                <a
+                                    href="{{ route('category', compact('category')) }}"
+                                    class="nav-link"
+                                    title="{{ $category->name }}">
+                                    {{ $category->name }}
+                                </a>
                             </li>
                         @endforeach
                     </ul>

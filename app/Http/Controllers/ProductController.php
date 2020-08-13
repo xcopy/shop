@@ -7,10 +7,19 @@ use App\Product;
 
 class ProductController extends Controller
 {
-    public function index() {
-        return view('product.index', [
-            'products' => Product::with('category')->get()
-        ]);
+    public function index($category = null) {
+        /** @var $category Category|null */
+        $category = $category
+            ? Category::findBySlugOrFail($category)
+            : null;
+
+        $query = $category
+            ? $category->products()
+            : Product::query();
+
+        $products = $query->with('category')->get();
+
+        return view('product.index', compact('category', 'products'));
     }
 
     public function show($category, $product) {

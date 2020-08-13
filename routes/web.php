@@ -13,12 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ProductController@index')
-    ->name('home');
-
-Route::get('{category}', function ($category) {
-    var_dump($category); // todo
-})
+Route::get('{category?}', 'ProductController@index')
     ->where('category', '[a-z-]+')
     ->name('category');
 
