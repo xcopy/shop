@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
-use App\Category;
+use App\Models\Category;
 
 class AppServiceProvider extends ServiceProvider
 {
