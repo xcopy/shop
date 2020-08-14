@@ -21,6 +21,8 @@ Auth::routes([
     'confirm' => false
 ]);
 
+Route::redirect('/home', '/');
+
 Route::get('{category?}', 'ProductController@index')
     ->where('category', '[a-z-]+')
     ->name('category');
