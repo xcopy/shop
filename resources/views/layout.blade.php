@@ -18,7 +18,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav justify-content-around w-100">
+                    <ul class="navbar-nav">
                         @foreach($categories as $category)
                             <li class="nav-item">
                                 <a
@@ -30,6 +30,20 @@
                             </li>
                         @endforeach
                     </ul>
+                    <div class="navbar-nav ml-md-auto">
+                        @guest
+                            <a href="{{ route('login') }}" class="nav-link">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </a>
+                        @else
+                            <a href="#" class="nav-link" id="logout">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endguest
+                    </div>
                 </div>
             </div>
         </nav>
@@ -39,6 +53,16 @@
         </main>
 
         <footer class="text-center text-muted p-2">Copyright &copy; {{ date('Y') }} Apple Inc. All rights reserved.</footer>
+        <script type="text/javascript">
+            (function () {
+                var el = document.getElementById('logout');
+
+                el && el.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    document.getElementById('logout-form').submit();
+                });
+            })();
+        </script>
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

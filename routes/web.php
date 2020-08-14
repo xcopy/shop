@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes([
+    'login' => true,
+    'logout' => true,
+    'register' => false,
+    'reset' => false,
+    'confirm' => false
+]);
+
 Route::get('{category?}', 'ProductController@index')
     ->where('category', '[a-z-]+')
     ->name('category');
