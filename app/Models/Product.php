@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\EloquentSortable\Sortable;
 
-class Product extends Model
+class Product extends Model implements Sortable
 {
     use SluggableModel, SortableModel;
 
