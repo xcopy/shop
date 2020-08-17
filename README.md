@@ -1,4 +1,5 @@
 - Clone the repo `git@github.com:xcopy/shop.git`
+- Install packages `composer install`
 - Create `.env` file (from `.env.example`) 
 - Generate app key `php artisan key:generate --ansi`
 - Create new database and setup DB settings in your `.env` file
