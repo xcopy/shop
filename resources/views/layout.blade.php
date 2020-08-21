@@ -36,11 +36,11 @@
                                 <i class="fas fa-sign-in-alt"></i> Login
                             </a>
                         @else
-                            <a href="#" class="nav-link" id="logout">
-                                <i class="fas fa-sign-out-alt"></i> Logout
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            <form action="{{ route('logout') }}" method="post">
                                 @csrf
+                                <button type="submit" class="btn btn-light">
+                                    <i class="fas fa-sign-out-alt"></i> Logout
+                                </button>
                             </form>
                         @endguest
                     </div>
@@ -53,16 +53,6 @@
         </main>
 
         <footer class="text-center text-muted p-2">Copyright &copy; {{ date('Y') }} Apple Inc. All rights reserved.</footer>
-        <script type="text/javascript">
-            (function () {
-                var el = document.getElementById('logout');
-
-                el && el.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    document.getElementById('logout-form').submit();
-                });
-            })();
-        </script>
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
