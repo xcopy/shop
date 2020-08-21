@@ -45,7 +45,7 @@ class CreateDatabaseCommand extends Command
                 // Set the database name to null so DB commands connect to raw mysql, not a database
                 config(['database.connections.mysql.database' => null]);
 
-                $query = "CREATE DATABASE $database CHARACTER SET $charset COLLATE $collation";
+                $query = "CREATE DATABASE IF NOT EXISTS $database CHARACTER SET $charset COLLATE $collation";
 
                 DB::statement($query);
 

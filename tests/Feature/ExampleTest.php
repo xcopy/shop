@@ -12,10 +12,17 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testHomePageIsGood()
     {
         $response = $this->get('/');
 
         $response->assertStatus(200);
+    }
+
+    public function testRedirectToHomePage()
+    {
+        $response = $this->get('/home');
+
+        $response->assertRedirect('/');
     }
 }
