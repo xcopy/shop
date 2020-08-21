@@ -1,8 +1,9 @@
-- Clone the repo `git@github.com:xcopy/shop.git`
+- Clone the repo `git@github.com:xcopy/store.git`
 - Install packages `composer install`
-- Create `.env` file (from `.env.example`) 
+- Copy `.env.example` file to `.env` 
 - Generate app key `php artisan key:generate --ansi`
-- Create new database and setup DB settings in your `.env` file
+- Setup database settings in your `.env` file
+- Create database `php artisan db:create`
 - Run migrations/seeds `php artisan migrate:refresh --seed`
 - Run application `php artisan serve`
 - Voilà!
